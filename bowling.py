@@ -31,11 +31,12 @@ def score(game):
 
 
 def get_value(char):
-    if char.isnumeric():
-        return int(char)
-    elif char.lower() == 'x' or char == '/':
-        return 10
-    elif char == '-':
-        return 0
-    else:
+    try:    
+        if char.isnumeric():
+            return int(char)
+        elif char.lower() == 'x' or char == '/':
+            return 10
+        elif char == '-':
+            return 0
+    except:
         raise ValueError()
